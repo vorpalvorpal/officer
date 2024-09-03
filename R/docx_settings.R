@@ -103,6 +103,12 @@ update.docx_settings <- function(object,
 
 #' @export
 to_wml.docx_settings <- function(x, add_ns = FALSE, ...) {
+  print("to_wml")
+  print(names(x))
+  if ("embed_ttf" %in% names(x)) {
+    print("embed_ttf")
+    print(x$embed_ttf)
+  }
   out <- paste0(
     "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n",
     "<w:settings xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\">",
