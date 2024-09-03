@@ -119,9 +119,9 @@ to_wml.docx_settings <- function(x, add_ns = FALSE, ...) {
     sprintf("<w:decimalSymbol w:val=\"%s\"/>", x$decimal_symbol),
     sprintf("<w:listSeparator w:val=\"%s\"/>", x$list_separator),
     if (x$even_and_odd_headers) "<w:evenAndOddHeaders/>",
-    if ("embed_ttf" %in% names(x) && x$embed_ttf) "<w:embedTrueTypeFonts/>",
-    if ("embed_system" %in% names(x) && x$embed_system) "<w:embedSystemFonts/>",
-    if ("embed_subset" %in% names(x) && x$embed_subset) "<w:saveSubsetFonts/>",
+    if ("embed_ttf" %in% names(x) && isTRUE(x$embed_ttf)) "<w:embedTrueTypeFonts/>",
+    if ("embed_system" %in% names(x) && isTRUE(x$embed_system)) "<w:embedSystemFonts/>",
+    if ("embed_subset" %in% names(x) && isTRUE(x$embed_subset)) "<w:saveSubsetFonts/>",
     "</w:settings>"
   )
   out
