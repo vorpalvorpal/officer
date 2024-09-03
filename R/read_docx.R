@@ -74,7 +74,6 @@ read_docx <- function(path = NULL) {
   # Copy embedded font settings iff fonts are embedded in the current document
   fonts <- list()
   if (dir.exists(file.path(package_dir, "word/fonts"))) {
-    print("word/fonts")
     node_doc <- read_xml(file.path(package_dir, "word/settings.xml"))
     if (!inherits(xml_child(node_doc, "w:embedTrueTypeFonts"), "xml_missing")) {
       print("fonts$ttf")
